@@ -46,6 +46,27 @@ jobs:
         id: extract_ip
         run: echo "::set-output name=DATABASE_IP::$(terraform output -json database_ip | jq -r '.')"
 
+
+
+        
+      - name: Extract Database IP
+        id: extract_ip2
+        run: echo "::set-output name=DATABASE_IP::$(echo '[
+  {
+    "ip_address": "34.66.117.252",
+    "time_to_retire": "",
+    "type": "PRIMARY"
+  }
+]' | jq -r '.[0].ip_address')"
+
+
+
+
+
+
+        
+
+
       - name: Créer Variable d'Environnement
         run: echo "MA_VARIABLE_ENV=192.168.1.1" >> $GITHUB_ENV
 
