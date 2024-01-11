@@ -43,7 +43,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Créer Variable d'Environnement
-        run: echo "MA_VARIABLE_ENV=valeur_de_ma_variable" >> $GITHUB_ENV
+        run: echo "MA_VARIABLE_ENV=192.168.1.1" >> $GITHUB_ENV
 
       - name: Afficher Variable d'Environnement
         run: echo "La valeur de ma variable d'environnement est $MA_VARIABLE_ENV"
