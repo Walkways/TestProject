@@ -42,6 +42,10 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
+      - name: Extract Database IP
+        id: extract_ip
+        run: echo "::set-output name=DATABASE_IP::$(terraform output -json database_ip | jq -r '.')"
+
       - name: Créer Variable d'Environnement
         run: echo "MA_VARIABLE_ENV=192.168.1.1" >> $GITHUB_ENV
 
