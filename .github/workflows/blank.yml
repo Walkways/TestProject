@@ -42,10 +42,9 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: Use Database IP
-        run: echo "export DATABASE_IP=192" >> $GITHUB_ENV
-          # Continue with your deployment steps
+      - name: Créer Variable d'Environnement
+        run: echo "MA_VARIABLE_ENV=valeur_de_ma_variable" >> $GITHUB_ENV
 
       - name: Afficher Variable d'Environnement
-        run: echo "La valeur de ma variable d'environnement est $DATABASE_IP"
+        run: echo "La valeur de ma variable d'environnement est $MA_VARIABLE_ENV"
 
