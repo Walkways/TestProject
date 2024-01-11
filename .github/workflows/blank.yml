@@ -44,7 +44,7 @@ jobs:
 
       - name: Use Database IP
         run: |
-          echo "DATABASE_IP="192.168.1.1" >> .env
+          echo "export DATABASE_IP=192.168.1.1" >> $GITHUB_ENV
           # Continue with your deployment steps
 
       - name: Afficher Variable d'Environnement
