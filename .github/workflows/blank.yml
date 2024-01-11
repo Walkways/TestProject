@@ -43,8 +43,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Use Database IP
-        run: |
-          echo "export DATABASE_IP=192.168.1.1" >> $GITHUB_ENV
+        run: echo "export DATABASE_IP=192" >> $GITHUB_ENV
           # Continue with your deployment steps
 
       - name: Afficher Variable d'Environnement
