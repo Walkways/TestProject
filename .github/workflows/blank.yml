@@ -45,19 +45,12 @@ jobs:
       - name: Extract Database IP
         id: extract_ip
         run: echo "::set-output name=DATABASE_IP::$(terraform output -json database_ip | jq -r '.')"
-
-
-
         
-      - name: Extract Database IP
+      - name: Extract Database IP Bis
         id: extract_ip2
-        run: echo "::set-output name=DATABASE_IP::$(echo '[
-  {
-    "ip_address": "34.66.117.252",
-    "time_to_retire": "",
-    "type": "PRIMARY"
-  }
-]' | jq -r '.[0].ip_address')"
+        run: echo "::set-output name=DATABASE_IP::$(terraform output -json database_ip | jq -r '.[0].ip_address')"
+
+
 
 
 
