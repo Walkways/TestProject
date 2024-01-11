@@ -44,7 +44,7 @@ jobs:
 
       - name: Use Database IP
         run: |
-          echo "DATABASE_IP=${{ 192.168.1.1 }}" >> .env
+          echo "DATABASE_IP="192.168.1.1" >> .env
           # Continue with your deployment steps
 
       - name: Afficher Variable d'Environnement
